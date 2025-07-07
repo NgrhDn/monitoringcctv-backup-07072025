@@ -66,17 +66,6 @@ Route::group(['middleware' => 'auth'], function () {
     Route::get('/login', function () {
 		return view('dashboard');
 	})->name('sign-up');
-
-    Route::get('/cctv', [cctvController::class, 'index'])->name('cctv.index');
-    Route::get('/cctv/create', [cctvController::class, 'create'])->name('cctv.create');
-    Route::post('/cctv', [cctvController::class, 'store'])->name('cctv.store');
-    Route::get('/cctv/{cctv}', [cctvController::class, 'show'])->name('cctv.show');
-    Route::get('editCctv/{cctv}', [cctvController::class, 'edit'])->name('cctv.edit');
-    Route::post('/cctv/{cctv}', [cctvController::class, 'update'])->name('cctv.update');
-    Route::delete('/cctv/{cctv}', [cctvController::class, 'delete'])->name('cctv.delete');
-
-	Route::get('/cctv', [cctvController::class, 'index'])->name('cctv.index');
-
 	Route::get('/videos', [VideoController::class, 'index'])->name('videos.index');
 Route::get('/videos/create', [VideoController::class, 'create'])->name('videos.create');
 Route::post('/videos', [VideoController::class, 'store'])->name('videos.store');
@@ -86,6 +75,16 @@ Route::post('/videos', [VideoController::class, 'store'])->name('videos.store');
 
 
 Route::get('/', [HomeController::class, 'home'])->name('welcome');
+
+
+Route::get('/cctv', [cctvController::class, 'index'])->name('cctv.index');
+Route::get('/cctv/create', [cctvController::class, 'create'])->name('cctv.create');
+Route::post('/cctv', [cctvController::class, 'store'])->name('cctv.store');
+Route::get('/cctv/{cctv}', [cctvController::class, 'show'])->name('cctv.show');
+Route::get('editCctv/{cctv}', [cctvController::class, 'edit'])->name('cctv.edit');
+Route::post('/cctv/{cctv}', [cctvController::class, 'update'])->name('cctv.update');
+Route::delete('/cctv/{cctv}', [cctvController::class, 'delete'])->name('cctv.delete');
+
 
 Route::group(['middleware' => 'guest'], function () {
     Route::get('/register', [RegisterController::class, 'create']);

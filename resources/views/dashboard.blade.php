@@ -1,4 +1,4 @@
-@extends('layouts.user_type.auth')
+<!--@extends('layouts.user_type.auth')
 
 @section('content')
 
@@ -32,9 +32,9 @@
     </script>
   </head>
 
-    <header>
-        <h1>Dashboard CCTV DIY</h1>
-        <p>Memantau kondisi lalu lintas di berbagai titik kota secara real-time</p>
+    <header class="text-center mb-4">
+      <h1>Dashboard CCTV DIY</h1>
+      <p>Memantau kondisi lalu lintas di berbagai titik kota secara real-time</p>
     </header>
 
     @php
@@ -52,26 +52,31 @@
                 <div class="row">
                     @foreach($cctvGroup as $cctv)
                         <div class="col-md-6 col-lg-4 mb-4">
-                            <div class="card">
-                                <div class="card-body">
-                                    <h5 class="card-title text-center mb-3">{{ $cctv->namaTitik }}</h5>
-                                    <div class="iframe-container" style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
-                                        <iframe
-                                            src="{{ $cctv->link }}"
-                                            style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"
-                                            frameborder="0"
-                                            allowfullscreen>
-                                        </iframe>
-                                        <div class="iframe-overlay"
-                                             onclick="this.style.display='none';"
-                                             style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.5); display: flex; align-items: center; justify-content: center; cursor: pointer;">
-                                            <svg class="btn-play" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="80" height="80">
-                                                <path fill="white" d="M8 5v14l11-7z"/>
-                                            </svg>
-                                        </div>
-                                    </div>
+                          <div class="card">
+                            <div class="card-body">
+                              <h5 class="card-title text-center mb-3" style="font-size: 14px;">{{ $cctv->namaTitik }}</h5>
+                              <div class="iframe-container" style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
+                                <iframe
+                                <iframe
+                                src="{{ $cctv->link }}"
+                                style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"
+                                frameborder="0"
+                                allowfullscreen
+                                allow="autoplay"
+                                loading="lazy"
+                                data-playing="false">
+                              </iframe>
+                                </iframe>
+                                <div class="iframe-overlay"
+                                   onclick="this.style.display='none';"
+                                   style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.5); display: flex; align-items: center; justify-content: center; cursor: pointer;">
+                                  <svg class="btn-play" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="80" height="80">
+                                    <path fill="white" d="M8 5v14l11-7z"/>
+                                  </svg>
                                 </div>
+                              </div>
                             </div>
+                          </div>
                         </div>
                     @endforeach
                 </div>
@@ -125,7 +130,7 @@
                 beginAtZero: true,
                 padding: 15,
                 font: {
-                  size: 14,
+                  size: 14px,
                   family: "Open Sans",
                   style: 'normal',
                   lineHeight: 2
@@ -153,4 +158,4 @@
 
   </script>
 @endpush
-
+-->

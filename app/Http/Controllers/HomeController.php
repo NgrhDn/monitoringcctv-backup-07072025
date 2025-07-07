@@ -10,7 +10,7 @@ class HomeController extends Controller
 {
     public function home()
     {
-        $cctv = cctv::all();
+        $cctv = CCTV::all();
         return view('welcome', compact('cctv'));
     }
 }

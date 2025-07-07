@@ -5,7 +5,7 @@
 <main class="main-content mt-0">
   <section>
     <!-- Flexbox parent container -->
-    <div class="page-header min-vh-100 d-flex align-items-center justify-content-center" style="background-image: url('/path/to/your/new-background-robot.jpg'); background-size: cover; background-position: center;">
+    <div class="page-header min-vh-100 d-flex align-items-center justify-content-center" style="background-image: url('{{ asset('assets/img/robt.jpg') }}'); background-size: cover; background-position: center;">
       <div class="container">
         <div class="row justify-content-center">
           <!-- Card for login -->
@@ -13,10 +13,6 @@
             <div class="card card-plain">
               <div class="card-header pb-0 text-center bg-transparent">
                 <h3 class="font-weight-bolder text-info text-gradient">Welcome back</h3>
-                <p class="mb-0">Create a new account</p>
-                <p class="mb-0">OR Sign in with these credentials:</p>
-                <p class="mb-0">Email <b>admin@softui.com</b></p>
-                <p class="mb-0">Password <b>secret</b></p>
               </div>
               <div class="card-body">
                 <form role="form" method="POST" action="/session">

@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Models\cctv;
+use App\Models\CCTV;
 
 class cctvController extends Controller
 {
